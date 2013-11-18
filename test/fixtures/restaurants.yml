@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_id: 1
+  name: MyString
+  summary: MyText
+  max_capacity: 1
+  avail_capacity: 1
+  two_seater: 1
+  four_seater: 1
+  six_seater: 1
+  eight_seater: 1
+
+two:
+  account_id: 1
+  name: MyString
+  summary: MyText
+  max_capacity: 1
+  avail_capacity: 1
+  two_seater: 1
+  four_seater: 1
+  six_seater: 1
+  eight_seater: 1
