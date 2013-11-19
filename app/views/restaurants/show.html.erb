@@ -1,51 +1,57 @@
 <h1><%= @restaurant.name %> Reviews</h1>
+<body>
 
-
-
-<h3> Available Times </h3>
-  <% @restaurant.reservations.each do |r| %>
-  <%= r.start_time %>
-  <% end %>
-  <br>
- 
-<% if current_account %>
-<h3> Reviews: </h3>
-<% @restaurant.reviews.each do |review| %>
-<p>
-	<%= review.review %>
-	<br>
-	<% if review.account != nil %>
-	 <em> by <%= review.account.profile_name %></em>
-        Added on: <%= review.created_at %>
-      <% end %>
-    </p>
-  <% end %>
-
-  <h4>Add New Review</h4>
-
-  <%= form_for([@restaurant, @review]) do |f| %>
-    <% if @review.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-        <ul>
-        <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+  <div class="pure-g">
+    <div class="pure-u-1-2">    
+      <h3> Available Times </h3>
+        <% @restaurant.reservations.each do |r| %>
+        <%= r.start_time %>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :review %><br />
-      <%= f.text_area :review %>
+        <br>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+    <div class="pure-u-1-2">
+      <% if current_account %>
+      <h3> Reviews: </h3>
+      <% @restaurant.reviews.each do |review| %>
+      <p>
+      	<%= review.review %>
+      	<br>
+      	<% if review.account != nil %>
+      	 <em> by <%= review.account.profile_name %></em>
+              Added on: <%= review.created_at %>
+            <% end %>
+          </p>
+        <% end %>
     </div>
-  <% end %>
+  </div>
+  
+    
+        <h3>Add New Review</h3>
 
-<% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
-<% end %>
+        <%= form_for([@restaurant, @review]) do |f| %>
+          <% if @review.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
+              <ul>
+              <% @review.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :review %><br />
+            <%= f.text_area :review %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+
+      <% else %>
+        <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
+      <% end %>
+   
+  </body>

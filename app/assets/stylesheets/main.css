@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+div.pure-g {
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    position:absolute;
+    position:           absolute;
+    display:            inline-block;
+    left:           -500px;
+    width:          1000px;
+    margin:             0 50%;
+}

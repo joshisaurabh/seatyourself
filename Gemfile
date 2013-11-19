@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Paperclipe
+gem "paperclip"
+
 #normalize
 gem 'normalize-rails'
 # To use ActiveModel has_secure_password

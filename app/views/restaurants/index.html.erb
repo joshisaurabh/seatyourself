@@ -1,11 +1,12 @@
 <h1>Restaurants Listings</h1>
 
-<table class="pure-table pure-table-bordered">
+
+  <table class="pure-table pure-table-bordered">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <!-- <th>City</th> -->
+      <th>Thumbnail</th>
     </tr>
   </thead>
 <% @restaurants.each do |r| %>
@@ -14,7 +15,8 @@
       <td><%= r.name %> | <%= link_to "Reviews", restaurant_path(r) %> | <%= link_to "Reservation", restaurant_path(r) %></td>
       <td><%= r.summary %></td>
       
-      <!-- <td><%= r %></td> -->
+      <td><%= link_to image_tag(r.photo.url(:thumb)) %></td>
     </tr>
   </tbody>
 <% end %>
+</table>
