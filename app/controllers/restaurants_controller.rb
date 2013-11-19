@@ -18,7 +18,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+  
+   @restaurant = Restaurant.find(params[:id])
 
 
     if current_account
@@ -26,7 +27,8 @@ class RestaurantsController < ApplicationController
       @reservation = @restaurant.reservations.build
     end
 
-    @account = Account.find(params[:id])
+  
+
   end
 
   def edit

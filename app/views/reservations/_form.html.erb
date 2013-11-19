@@ -1,0 +1,10 @@
+<h3>Make a Reservation</h3>
+<%= form_for [@restaurant, @reservation] do |f| %>
+  <p>
+    <%= f.label :party_count %><br/>
+    <%= f.text_field :party_count %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

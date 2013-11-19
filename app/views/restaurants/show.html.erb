@@ -3,12 +3,15 @@
 
   <div class="pure-g">
     <div class="pure-u-1-2">    
-      <h3> Available Times </h3>
-        <% @restaurant.reservations.each do |r| %>
-        <%= r.start_time %>
-        <% end %>
+      <h3> Wanna Make a Rezervation For <%= Date.today + 1 %> </h3>
+        <br>
+        <%= render partial: 'restaurants/reservation', collection: @restaurant.reservations %>
+      <strong>Please select a time!!!</strong><br>
+      <%= render partial: 'reservations/form' %>
+
         <br>
     </div>
+
     <div class="pure-u-1-2">
       <% if current_account %>
       <h3> Reviews: </h3>
@@ -23,9 +26,10 @@
           </p>
         <% end %>
     </div>
-  </div>
-  
+    <div class="pure-u-1-2"> 
+    </div>
     
+    <div class="pure-u-1-2">  
         <h3>Add New Review</h3>
 
         <%= form_for([@restaurant, @review]) do |f| %>
@@ -40,6 +44,7 @@
               </ul>
             </div>
           <% end %>
+        
 
           <div class="field">
             <%= f.label :review %><br />
@@ -51,7 +56,8 @@
         <% end %>
 
       <% else %>
-        <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
+        <p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
       <% end %>
-   
-  </body>
+    </div>
+     </body>
+ </div>
