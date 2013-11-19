@@ -3,6 +3,7 @@
 <head>
   <title>Seatyourself</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">  
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,7 +23,7 @@
       <% if current_account %>
         Signed in as <%= current_account.profile_name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
       <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_account_path %>
+        <%= link_to "Sign in", new_session_path, :class => "pure-button" %> or <%= link_to "Sign up", new_account_path, :class => "pure-button" %>
       <% end %>
     </p>
   </body>
@@ -30,3 +31,17 @@
 
 </body>
 </html>
+<!-- <div class="pure-menu pure-menu-open">
+    <a class="pure-menu-heading">Yahoo! Sites</a>
+
+    <ul>
+        <li><a href="#">Flickr</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Finance</a></li>
+        <li class="pure-menu-heading">More Sites!</li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">OMG!</a></li>
+    </ul>
+</div> -->

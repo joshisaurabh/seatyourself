@@ -1,13 +1,16 @@
 <h1>Log in</h1>
-
 <%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %><br/>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+<form class="pure-form">
+    <fieldset>
+        
+        <%= text_field_tag(:email, params[:email], placeholder: "Email") %>
+     
+        <%= password_field_tag(:password, "", placeholder: "Password")  %>
+        
+        <!-- <label for="remember">
+            <input id="remember" type="checkbox"> Remember me
+        </label> -->
+        <%= submit_tag "Sign in", :class => "pure-button" %>
+    </fieldset>
+</form>
 <% end %>

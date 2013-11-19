@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
 
   def show
-  	@review +Review.find(params[:id])
+  	@review = Review.find(params[:id])
   end
 
   def create
@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-  	@review = REview.find(params[:id])
+  	@review = Review.find(params[:id])
   	@review.destroy
   end
 
@@ -27,6 +27,6 @@ class ReviewsController < ApplicationController
   end
 
   def load_restaurant
-  	@restaurant = Restaurant.finf(params[:restaurant_id])
+  	@restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

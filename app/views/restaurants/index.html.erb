@@ -1,2 +1,20 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>Restaurants Listings</h1>
+
+<table class="pure-table pure-table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <!-- <th>City</th> -->
+    </tr>
+  </thead>
+<% @restaurants.each do |r| %>
+  <tbody>
+    <tr>
+      <td><%= r.name %> | <%= link_to "Reviews", restaurant_path(r) %> | <%= link_to "Reservation", restaurant_path(r) %></td>
+      <td><%= r.summary %></td>
+      
+      <!-- <td><%= r %></td> -->
+    </tr>
+  </tbody>
+<% end %>

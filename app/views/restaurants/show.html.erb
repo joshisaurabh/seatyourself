@@ -1,12 +1,15 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1><%= @restaurant.name %> Reviews</h1>
 
+
+
+<h3> Available Times </h3>
+  <% @restaurant.reservations.each do |r| %>
+  <%= r.start_time %>
+  <% end %>
+  <br>
+ 
 <% if current_account %>
-
-<h3> Reviews </h3>
-
-<p> Reviews for <% @restaurant.name %></p>
-
+<h3> Reviews: </h3>
 <% @restaurant.reviews.each do |review| %>
 <p>
 	<%= review.review %>
@@ -18,7 +21,7 @@
     </p>
   <% end %>
 
-  <h4>New Review</h4>
+  <h4>Add New Review</h4>
 
   <%= form_for([@restaurant, @review]) do |f| %>
     <% if @review.errors.any? %>
@@ -46,4 +49,3 @@
   <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
 <% end %>
 
-<% end %>

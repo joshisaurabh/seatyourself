@@ -19,10 +19,14 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    
+
+
     if current_account
       @review = @restaurant.reviews.build
+      @reservation = @restaurant.reservations.build
     end
+
+    @account = Account.find(params[:id])
   end
 
   def edit
