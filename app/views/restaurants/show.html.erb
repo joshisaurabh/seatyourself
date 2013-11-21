@@ -2,14 +2,12 @@
 <body>
 
   <div class="pure-g">
-    <div class="pure-u-1-2">    
-      <h3> Wanna Make a Rezervation For <%= Date.today + 1 %> </h3>
+    <div class="pure-u-1-2">
+        <h3> Available Reservations for <%= Date.today + 1 %> </h3>
         <br>
-        <%= render partial: 'restaurants/reservation', collection: @restaurant.reservations %>
-      <strong>Please select a time!!!</strong><br>
-      <%= render partial: 'reservations/form' %>
-
-        <br>
+        <%= render partial: 'restaurants/schedule', collection: @restaurant.schedules %>
+       <br>
+      <%= render partial: 'schedule/form' %>
     </div>
 
     <div class="pure-u-1-2">
@@ -27,6 +25,13 @@
         <% end %>
     </div>
     <div class="pure-u-1-2"> 
+      <h3> Wanna Make a Rezervation For <%= Date.today + 1 %> </h3>
+        <br>
+        <%= render partial: 'restaurants/reservation', collection: @restaurant.reservations %>
+      <strong>Please select a time!!!</strong><br>
+      <%= render partial: 'reservations/form' %>
+
+        <br>
     </div>
     
     <div class="pure-u-1-2">  

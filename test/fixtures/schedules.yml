@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s_date: 2013-11-19
+  t12b: 1
+  t1b: 1
+  t2b: 1
+  t6b: 1
+  t7b: 1
+  t8b: 1
+
+two:
+  s_date: 2013-11-19
+  t12b: 1
+  t1b: 1
+  t2b: 1
+  t6b: 1
+  t7b: 1
+  t8b: 1

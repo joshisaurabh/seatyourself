@@ -27,6 +27,8 @@ class RestaurantsController < ApplicationController
       @reservation = @restaurant.reservations.build
     end
 
+    @schedule = Schedule.new
+    @schedule.restarant_id = @restaurant.id
   
 
   end

@@ -3,6 +3,7 @@ class Restaurant < ActiveRecord::Base
 	has_many :reservations
 	has_many :reviews
 	has_many :accounts, :through => :reviews	
+  has_many :schedules
 
   def available_times(date)
     [6, 7, 8, 9]
